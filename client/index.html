@@ -1,9 +1,28 @@
 <!DOCTYPE html>
 <html ng-app="app">
 <head>
+ <!-- Angular Material style sheet -->
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
   <title></title>
 </head>
 <body>
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular-animate/angular-animate.js"></script>
+  <script src="lib/angular-aria/angular-aria.js"></script>
+  <script src="lib/angular-material/angular-material.js"></script>
+  <!-- Angular Material Library -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script> 
+
+  <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="app.js"></script>
+  <script src="app/auth/auth.js"></script>
+  <script src="app/main/main.js"></script>
+
+  <md-button class="md-raised">Hello There!</md-button>
+
+
+
 <h1>Test Home Page</h1>
 {{1+1}}
 
@@ -21,13 +40,15 @@
 <!-- When main is up put a main.footer and a main.header -->
 
 </body>
-
-
+<!--
 <script src="lib/angular/angular.js"></script>
+<script src="lib/angular-animate/angular-animate.js"></script>
+<script src="lib/angular-aria/angular-aria.js"></script>
+<script src="lib/angular-material/angular-material.js"></script>
 <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
 <script src="app.js"></script>
 <script src="app/auth/auth.js"></script>
-<script src="app/main/main.js"></script>
+<script src="app/main/main.js"></script> -->
 
 </html>
 

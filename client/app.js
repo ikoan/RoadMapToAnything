@@ -1,7 +1,8 @@
 angular.module('app', [
   'ui.router',
   'app.main',
-  'app.auth'
+  'app.auth',
+  'ngMaterial'
   ])
 .config(function($stateProvider, $urlRouterProvider, $httpProvider) {
   $urlRouterProvider.otherwise('/');
