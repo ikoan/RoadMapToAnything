@@ -41,7 +41,7 @@ angular.module('app', [
         'testb': {
           templateUrl: 'app/test/test.pageb.html',
           controller: 'MainController'
-        },
+        }
       }
     });
 });
