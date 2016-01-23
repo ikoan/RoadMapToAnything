@@ -31,4 +31,17 @@ angular.module('app', [
         }
       }
     })
+    .state('testpage', {
+      url: '/',
+      views:{
+        'testa': {
+          templateUrl: 'app/test/test.pagea.html',
+          controller: 'MainController'
+        },
+        'testb': {
+          templateUrl: 'app/test/test.pageb.html',
+          controller: 'MainController'
+        },
+      }
+    });
 });
