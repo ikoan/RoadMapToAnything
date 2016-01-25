@@ -56,4 +56,13 @@ angular.module('app', [
         }
       }
     })
+    .state('register', {
+      url: '/register',
+      views: {
+        'signup': {
+          templateUrl: 'app/auth/signup.html',
+          controller: 'AuthController'
+        }
+      }
+    })
 });

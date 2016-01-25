@@ -4,6 +4,7 @@
   <title>Roadmap To Anything</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="styles.css" rel="stylesheet" type="text/css">  
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
@@ -18,16 +19,25 @@
             <li><a href="search.html"><i class="material-icons">search</i></a></li>
             <li><a hsref="roadmaps">My Roadmaps</a></li>
             <li><a href="app/auth/signup.html">Sign Up</a></li>
-            <li><a href="app/auth/signin.html">Log In</a></li>
+            <li><a ui-sref="register">Log In</a></li>
             <li><a href="/">Log Out</a></li>
+            <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+            <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Drop Me!</a>
+              <ul id='dropdown1' class='dropdown-content'>
+                <li><a href="#!">one</a></li>
+                <li><a href="#!">two</a></li>
+                <li class="divider"></li>
+                <li><a href="#!">three</a></li>
+              </ul>
           </ul>
-      </div>
+  <!--     </div> -->
     </nav>  
   </div>  
   <!--main page content-->
   <div class="container">
     <div ui-view="welcome"></div>
     <div ui-view="header"></div>
+    <div ui-view="signup"></div>
     <div ui-view="content"></div>
     <!--     <div ui-view="footer"></div> -->
   </div>
