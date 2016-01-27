@@ -31,10 +31,6 @@ angular.module('app', [
         'footer': {
           templateUrl: 'app/main/main.footer.html',
           controller: 'MainController'
-        },
-        'signup': {
-          templateUrl: 'app/auth/signin.html',
-          controller: 'AuthController'
         }
       }
     })
