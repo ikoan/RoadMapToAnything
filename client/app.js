@@ -3,7 +3,8 @@ angular.module('app', [
   'app.main',
   'app.auth',
   'app.dash',
-  'app.roadmaps',
+  'app.roadmapsctrl',
+  'app.roadmapsfactory',
   'app.browse',
   'app.creation'
   ])
@@ -83,7 +84,7 @@ angular.module('app', [
   //state for roadmap
   .state('home.roadmapTemplate', {
     auth: true,
-    url: '/roadmaps',
+    url: 'roadmaps',
     views: {
       'content@': {
         templateUrl: 'app/roadmaps/content.html',

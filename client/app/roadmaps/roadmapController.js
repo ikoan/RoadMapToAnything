@@ -1,32 +1,14 @@
-angular.module('app.roadmaps', [])
-// Roadmaps have a title, description, author, nodes array, all nodes: , created time
-  //
-.controller('RoadMapsController', function($scope,$http){
-  var roadmapId = localStorage.getItem('roadmap.id') || '000000000000000000000010';
-  
+angular.module('app.roadmapsctrl', ['app.roadmapsfactory'])
 
+.controller('RoadMapsController', function ($scope, RoadMapsFactory){
+  //roadmap.id to take care by Factory
+  angular.extend($scope, RoadMapsFactory);
 
-  $scope.currentRoadMapData = {};
-  $scope.renderedNodes = [];
-
-  // Fetch data for the current roadmap from the server.
-  $scope.getRoadMap = function(){  
-    return $http({
-      method: 'GET',
-      url: '/api/roadmaps/' + roadmapId
-    })
-    .then(function (res){
-      $scope.currentRoadMapData = res.data.data;
-    }, function(err){
-      if (err) return console.log(err);
-    });
-  };
-  
-  // Renders the nodes for the current roadmap to the page.
+ // Renders the nodes for the current roadmap to the page
   $scope.renderNodes = function(){
     var title = $scope.currentRoadMapData.title || 'test title';
     var nodes = $scope.currentRoadMapData.nodes || ['testnode1', 'testnode2'];    
-    // add an index to nodes to make ng-clicking easier.
+    // Add an index to nodes to make ng-clicking easier
     nodes.map(function(node,index){
       node.index = index;
     })
@@ -35,7 +17,7 @@ angular.module('app.roadmaps', [])
     $scope.renderedNodes = nodes;
     $scope.roadMapTitle = title;
     // User Logged in Data in the future
-    // some variable that holds that the user is logged in
+    // Some variable that holds that the user is logged in
     $scope.currentNode = nodes[0];
     $scope.renderCurrentNode();
   };
