@@ -3,6 +3,9 @@ angular.module('app.roadmapsctrl', ['app.roadmapsfactory'])
 .controller('RoadMapsController', function ($scope, RoadMapsFactory){
   //roadmap.id to take care by Factory
   angular.extend($scope, RoadMapsFactory);
+  // console.log(RoadMapsFactory);
+  $scope.currentRoadMapData = {};
+  $scope.renderedNodes = [];
 
  // Renders the nodes for the current roadmap to the page
   $scope.renderNodes = function(){
@@ -13,7 +16,6 @@ angular.module('app.roadmapsctrl', ['app.roadmapsfactory'])
       node.index = index;
     })
 
-
     $scope.renderedNodes = nodes;
     $scope.roadMapTitle = title;
     // User Logged in Data in the future
@@ -22,8 +24,19 @@ angular.module('app.roadmapsctrl', ['app.roadmapsfactory'])
     $scope.renderCurrentNode();
   };
 
-  $scope.getRoadMap()
-  .then($scope.renderNodes);
+  //When roadmap data is fetched, set it
+  $scope.getRoadMap()  
+    .then(function (res){
+      console.log('RESPONSE FROM GET REQUEST', res);
+      $scope.currentRoadMapData = res.data.data;
+    }, function(err){
+      if (err) return console.log(err);
+    })
+    .then(function(){
+      console.log($scope.currentRoadMapData);
+      // console.log(currentRoadMapData);
+      $scope.renderNodes();
+  });
 
   // Render Title
   // Assumes title links and description properties from get method

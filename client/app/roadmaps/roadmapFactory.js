@@ -4,8 +4,8 @@ angular.module('app.roadmapsfactory', [])
     var roadmapId = localStorage.getItem('roadmap.id') || '000000000000000000000010';
     // var username = localStorage.getItem('user.username') || 'bowieloverx950';
     // var nodeId = currentNode._id;
-    var currentRoadMapData = {};
-    var renderedNodes = [];
+    // var currentRoadMapData = {};
+    // var renderedNodes = [];
 
     // Fetch data for the current roadmap from the server.
     var getRoadMap = function() {
@@ -13,13 +13,14 @@ angular.module('app.roadmapsfactory', [])
           method: 'GET',
           url: '/api/roadmaps/' + roadmapId
         })
-        .then(function (res){
-          currentRoadMapData = res.data.data;
-        }, function(err){
-          if (err) return console.log(err);
-        });
-
-      };
+        // .then(function (res){
+        //   console.log('RESPONSE FROM GET REQUEST', res);
+        //   currentRoadMapData = res.data.data;
+        //   // return;
+        // }, function(err){
+        //   if (err) return console.log(err);
+        // });
+    };
 
     // // Submits a node to the user's inProgress.nodes array.  
     // var submitCompletedNode = function() {
@@ -71,9 +72,9 @@ angular.module('app.roadmapsfactory', [])
       roadmapId: roadmapId,
       // username: username,
       // nodeId: nodeId,
-      currentRoadMapData: currentRoadMapData,
-      renderedNodes: renderedNodes,
-      getRoadMap: getRoadMap,
+      // currentRoadMapData: currentRoadMapData,
+      // renderedNodes: renderedNodes,
+      getRoadMap: getRoadMap
       // submitCompletedNode: submitCompletedNode,
       // submitCompletedRoadmap: submitCompletedRoadmap,
       // createRoadMap: createRoadMap  
