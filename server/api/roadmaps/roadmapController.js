@@ -71,6 +71,21 @@ module.exports = {
         res.json({data: roadmap});
       })
       .catch(handleError(next));
-  }
+  },
 
+  // Function for voting on map
+  voteRoadmap : function (req, res, next) {
+    // Take in the request
+    // Look up the roadmapID
+    Roadmap.findOne({_id:_id})
+      /* When id is found, add userId to the appropriate array (upvote, downvote);
+      addToSet ensures that no duplicate items are added to set and does not affect 
+      existing duplicate elements
+      */
+      .addToSet({upvote: userId})
+      .addToSet({downvote: userId})
+      //send the data back for the updated upvotes and downvotes
+      .then(function(){})
+      .catch(handleError(next));
+  }
 };

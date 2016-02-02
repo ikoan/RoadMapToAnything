@@ -83,6 +83,41 @@ angular.module('roadmaps.ctrl', ['roadmaps.factory', 'services.server', 'service
     User.completeRoadmapById(roadmapId);
   }
 
+  // Upvote on roadmap
+  $scope.upVoteMap = function() {
+      console.log('UPVOTE IS SUBMITTED');
+      User.getData().then(function(data){
+        var username = data.username;
+        console.log('THIS IS USER', username);
+        console.log('THIS IS ROADMAP', roadmapId);
+        // Call the roadmap http request for posting upvote
+        sendUpVote(roadmapId, username)
+          //on success update the count for upvotes on page
+          .then()
+          //else console error
+          .catch()
+    });
+
+  }
+
+
+  // Downvote on a roadmap
+  $scope.downVoteMap = function() {
+    console.log('DOWNVOTE IS SUBMITTED');
+    User.getData().then(function(data){
+      var username = data.username;
+      console.log('THIS IS USER', username);
+      console.log('THIS IS ROADMAP', roadmapId);
+      // Call the roadmap http request for posting downvote
+      sendDownVote(roadmapId, username)
+        //on success update the count for upvotes on page
+          .then()
+          //else console error
+          .catch()
+    });
+
+  }
+
   $scope.connectLines = function(){
     $('.endPointForConnection').connections();
   };

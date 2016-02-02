@@ -8,7 +8,11 @@ var RoadmapSchema = new mongoose.Schema({
     author     : { type: ObjectId, required: true, ref: 'User' },
     nodes      : [ { type: ObjectId, ref: 'Node'} ],
     created    : { type: Date },
-    updated    : { type: Date },
+    updated    : { type: Date }
+    // ,
+    //I want to keep the ids of the users who vote
+    upvoteBy   : { type: array },
+    downvoteBy : [ { type: array }
 });
 
 hooks.setRoadmapHooks(RoadmapSchema);
