@@ -15,9 +15,13 @@
           <button class="link-box-btn btn" ng-click="submitCompletedNode()">Node Done</button>
         </div>
       </div>
-    </div>
   </div>
 </div>
+    <div class="row">
+        <i class="fa fa-thumbs-o-up fa-1x" ng-click="upVoteMap()"></i>
+        <h6 ng-bind="currentCountUpVotes">Upvotes</h6>
+        <i class="fa fa-thumbs-o-down fa-1x" ng-click="downVoteMap()"></i>
+      </div>
   <!-- Roadmap Title -->
 
 <div class="col s8 roadmap-title">
@@ -37,14 +41,16 @@
   <div class="center-align connector"></div>
 
   </div>
-      <button class="link-box-btn btn doneBtn" ng-click="submitCompletedRoadmap()">Map Done</button>
+  <!--     <button class="link-box-btn btn doneBtn" ng-click="submitCompletedRoadmap()">Map Done</button>
       <a class="waves-effect waves-light btn-large blue-grey lighten-1 col s6 offset-s3" ng-click="upVoteMap()">
         Up Vote!
       </a>
+      <i class="fa fa-thumbs-o-up fa-2x"></i>
       <div><h5 ng-bind="currentCountUpVotes">Upvotes</h5></div>
+      <i class="fa fa-thumbs-o-down fa-2x"></i>
       <a class="waves-effect waves-light btn-large blue-grey lighten-1 col s6 offset-s3" ng-click="downVoteMap()">
         Down Vote!
-      </a>
+      </a> -->
 </div>
   <div class="title-list container">
     <div ng-repeat="node in renderedNodes">
