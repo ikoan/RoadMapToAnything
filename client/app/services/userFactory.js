@@ -136,6 +136,29 @@ angular.module('services.user', ['services.request'])
   };
 
 
+   /* Request.put = function(url, data, options) {
+    parseOptionals(data, options);
+
+    return Request({
+      method: 'PUT', 
+      url: url, 
+      data: data, 
+      options: mergeDefaults(options)
+    });
+  }; */
+
+  /*
+    var sendUpVote = function(id, username) {
+      // Post request to database to update roadmap model to add username in upvotes array
+      return $http.post('/api/roadmaps/' + id + '/upvote', {username: username})
+    }
+  */
+
+  User.upvoteRoadmapById = function(id, username) {
+    return Request.put('/api/roadmaps/' + id + '/upvote', {username: username});
+  }
+
+
   /* * * * * * * * * * * * * * * * * * * * * 
    *               ALIASES                 *
    * * * * * * * * * * * * * * * * * * * * */
@@ -156,6 +179,8 @@ angular.module('services.user', ['services.request'])
 
   User.getMapProgress = User.getRoadmapProgress;
   User.getProgress = User.getRoadmapProgress;
+
+  User.upvoteRoadmapById = User.upvoteRoadmapById;
 
   return User;
 
